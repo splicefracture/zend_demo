@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="site" defaultIdMethod="native">
+    
+    <table name="restaurant" phpName="Restaurant">
+
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+        <column name="name" type="varchar" size="255" required="true" />
+
+        <column name="cuisine_id" type="integer" primaryKey="true"/>
+
+        <foreign-key foreignTable="cuisine" phpName="Cuisine" refPhpName="Cuisine">
+            <reference local="cuisine_id" foreign="id"/>
+        </foreign-key>
+
+        <unique name="restaurant_index">
+            <unique-column name="id"/>
+            <unique-column name="name"/>
+        </unique>
+
+    </table>
+
+    <table name="cuisine" phpName="Cuisine">
+        
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="name" type="varchar" required="true" />
+        
+        <unique name="cuisine_index">
+            <unique-column name="id"/>
+        </unique>
+        
+    </table>
+
+</database>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+            <config>
+              <propel>
+                <datasources default="site">
+                  <datasource id="site">
+                    <adapter>mysql</adapter>
+                    <connection>
+                      <classname>PropelPDO</classname>
+                      <dsn>mysql:host=localhost;dbname=site</dsn>
+                      <user>root</user>
+                      <password>devpass1</password>
+                    </connection>
+                  </datasource>
+                </datasources>
+              </propel>
+            </config>
+        

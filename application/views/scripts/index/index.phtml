@@ -1,0 +1,20 @@
+
+<div class="container">
+	<div class="jumbotron">
+	  	<h2>A quick search menu</h2>
+	  	<div class="input-group">
+	  		<input type="text" class="form-control" id="search_box">
+	  		<span class="input-group-addon">
+				<img class="search_img" src="/img/search.png"/>
+			</span>
+		</div>
+	</div>
+	<ul id="menu"></ul>
+</div>
+
+<?php
+	$ids = array('id','name','cuisine');
+	echo $this->getHelper('Backbone')
+		->partialTemplate($this, 'index/menu.phtml', $ids, 'menu_template' ); 
+?>
+
